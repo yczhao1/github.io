@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=1200px, initial-scale=1.2,maximum-scale=1.2">
 <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 允许网页运行在全屏模式 -->
 <meta name="mobile-web-app-capable" content="yes" /> <!-- 适用于安卓，允许网页运行在全屏模式 -->
-<title>Responsive Web Design</title>
+<title>CHESS</title>
 <link rel="stylesheet" href="style1.css">
 <script>
   window.onload = function() {
     var viewport = document.querySelector("meta[name=viewport]");
     if (screen.width <= 768) { 
-      viewport.setAttribute("content", "width=1200px, initial-scale=0.35, maximum-scale=0.35");
+      viewport.setAttribute("content", "width=1200px, initial-scale=0.35, maximum-scale=1");
     } else {
       viewport.setAttribute("content", "width=1200px, initial-scale=1.2, maximum-scale=1.2");
     }
