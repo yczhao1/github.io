@@ -249,7 +249,7 @@
 	}
   
 #data{
-  display: none;
+  display: block;
 }
 
 #home{
@@ -257,7 +257,7 @@
 }
 
 #contact{
-  display: block;
+  display: none;
 }
 
 .content1{
