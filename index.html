@@ -9,6 +9,12 @@
 <title>CHESS</title>
 <link rel="stylesheet" href="style1.css">
 <script>
+  function autoplayvideo() {
+    var video = document.getElementById("myVideo");
+    video.muted=false;
+    video.play();
+  };
+
   window.onload = function() {
     var viewport = document.querySelector("meta[name=viewport]");
     if (screen.width <= 768) { 
@@ -17,6 +23,30 @@
       viewport.setAttribute("content", "width=1200px, initial-scale=1.2, maximum-scale=1.2");
     }
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+  // 获取所有导航链接
+  const navbarLinks = document.querySelectorAll('.navbar a, #footer a');
+
+  // 遍历每个链接并添加点击事件
+  navbarLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      // 阻止默认的锚点跳转行为
+      e.preventDefault();
+
+      // 获取被点击链接的 href 属性值
+      const sectionIdToShow = this.getAttribute('href').replace('#', '');
+
+      // 隐藏所有部分
+      document.querySelectorAll('#home, #data, #contact').forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // 显示与被点击链接 href 相对应的部分
+      document.getElementById(sectionIdToShow).style.display = 'block';
+    });
+  });
+});
 </script>
 
 </head>
@@ -39,66 +69,143 @@
 	  <p class="custom-size">CHESS影像共享平台</p>
   </div> -->
 </div>
-	
-<!-- Section 3: Content with Text, Images, and Background -->
-<div id="section-3" >
-  <!-- Left side content: Text + Image + Text -->
-  <div class="left-content" >
-    <p class="custom-size4">CHESS 新闻</p>
-    <img src="image/3.png" alt="Left Side Image" >
+<div id="home">
+  <!-- Section 3: Content with Text, Images, and Background -->
+  <div id="section-3" >
+    <!-- Left side content: Text + Image + Text -->
+    <div class="left-content" >
+      <p class="custom-size4">CHESS 新闻</p>
+      <img src="image/3.png" alt="Left Side Image" >
 
-    <div style="background-color:antiquewhite;width: 600px; ">Portal Hypertension & Cirrhosis (PH&C)</div>
-    <div style="background-color:antiquewhite; width: 600px; ">首次参加AASLD年会</div>
+      <div style="background-color:antiquewhite;width: 600px; ">Portal Hypertension & Cirrhosis (PH&C)</div>
+      <div style="background-color:antiquewhite; width: 600px; ">首次参加AASLD年会</div>
+    </div>
+    <!-- Right side content: Text over Background Image -->
+    <div class="right-content">
+    <p class="custom-size1">CHESS影像共享平台</p>
+    <p class="custom-size2">CHESS影像共享平台是一个开放、共享、合作共赢的影像数据平台，旨在为合作伙伴提供高质量的影像数据共享、检索、下载等一系列功能。</p>
+    <!-- <p class="custom-size2">数据平台，旨在为合作伙伴提供高质量的影像数据共享、检索、</p>
+    <p class="custom-size2">下载等一系列功能。</p> -->
+    <p class="custom-size2">CHESS影像共享平台，用户可以上传自己的影像数据，与合作伙伴共享，同时也可以在数据库中检索和下载所需的数据。</p>
+    <!-- <p class="custom-size2">与合作伙伴共享，同时也可以在数据库中检索和下载所需的数据。</p> -->
+    <p class="custom-size2">CHESS影像共享平台欢迎广大用户加入我们的大家庭，共同分享医学影像数据，推动医学科技进步。</p>
+    <!-- <p class="custom-size2">同分享医学影像数据，推动医学科技进步。</p> -->
+    </div>
   </div>
-  <!-- Right side content: Text over Background Image -->
-  <div class="right-content">
-	 <p class="custom-size1">CHESS影像共享平台</p>
-	 <p class="custom-size2">CHESS影像共享平台是一个开放、共享、合作共赢的影像数据平台，旨在为合作伙伴提供高质量的影像数据共享、检索、下载等一系列功能。</p>
-	 <!-- <p class="custom-size2">数据平台，旨在为合作伙伴提供高质量的影像数据共享、检索、</p>
-	 <p class="custom-size2">下载等一系列功能。</p> -->
-	 <p class="custom-size2">CHESS影像共享平台，用户可以上传自己的影像数据，与合作伙伴共享，同时也可以在数据库中检索和下载所需的数据。</p>
-	 <!-- <p class="custom-size2">与合作伙伴共享，同时也可以在数据库中检索和下载所需的数据。</p> -->
-	 <p class="custom-size2">CHESS影像共享平台欢迎广大用户加入我们的大家庭，共同分享医学影像数据，推动医学科技进步。</p>
-	 <!-- <p class="custom-size2">同分享医学影像数据，推动医学科技进步。</p> -->
+    <!-- Section 4: Interactive Image Links -->
+  <div id="section-4" >
+    <!-- Add clickable images here -->
+    <a href="http://example.com/link1" target="_blank">
+      <img src="image/13.png" alt="Interactive Image 1"   style="margin-right: 10px; ">
+    <p class="custom-size3">数据上传</p>
+    
+    </a>
+    <a href="http://example.com/link2" target="_blank">
+      <img src="image/14.png" alt="Interactive Image 2"  >
+    <p class="custom-size3">数据检索</p>
+    </a>
+    <a href="http://example.com/link3" target="_blank">
+      <img src="image/15.png" alt="Interactive Image 2"  style="width: 40; height:20 ;">
+    <p class="custom-size3">操作指引</p>
+    </a>
+  </div>
+  <!-- Section 5: Three Column Layout -->
+  <div id="section-5" >
+    <!-- Column 1 -->
+    <div class="column" >
+      <h2 class="custom-size9">关于 CHESS</h2>
+      <p class="custom-size5">国门静脉高压联盟(CHESS) 致力于打造国际一流门静脉高压与肝硬化临床研究及转化科学平台。联盟核心工作为开展前治技术研究及应用转化，牵头发起了近30项国内外多中心临床研究。CHESS牵头制定了《中国肝静脉压力梯度临床应用专家共识》、《新型冠状病毒肺炎后疫情时代巾静脉高压症全病程管理专家共识》，组织发起的系列研究及转化实践已获得我国500余家高水平医院的参与支持，有效推动了与全球20余个国家及地区学术组织的高质量合作发展。</p>
+    
+    </div>
+    <!-- Column 2 -->
+    <div class="column">
+      <h2 class="custom-size9">PH&C期刊</h2>
+      <img src="image/9.png" alt="Column 2 Image" style="max-width: 50%; height: auto; float: left;margin-right: 10px;">
+      <p class="custom-size7" >CHESS官方期刊Portal Hypertension & Cirrhosis (《门静脉高压与肝硬化(英文)》)是全球首本聚焦力静脉高压与肝硬化的国际期刊，由国家传染病医学中心学术支持，中华医学会杂志社出版,Wiley全球发行。期刊由CHESS创始人祁小龙担任创刊主编，中国科学院院士滕皋军担任名誉主编，国际编委来自美国哈佛大学、斯坦福大学、耶鲁大学及英国牛津大学等世界一流高等学府。期刊致力于搭建世界-流的巾静脉高压与肝硬化学术共享平台，发表高质量的科研论文及权威共识指南，向该领域医务工作者、科研人员提供新进展和新成果。</p>
+    </div>
+    <!-- Column 3 -->
+    <div class="column" >
+      <h2 class="custom-size9">内静脉高压</h2>
+      <p class="custom-size5">静脉高压症是一组由门静脉压力持久增高引起的症候群。大多数由肝硬化引起，少数继发于门静脉主干或肝静脉梗阻以及原因不明的其他因素。当门静脉血不能顺利通过肝脏回流入下腔静脉就会引起巾静脉压力增高。表现为门-体静脉间交通支开放，大量门静脉血在未进入肝脏前就直接经交通支进入体循环，从而出现腹壁和食管静脉扩张、脾脏肿大和脾功能亢进、肝功能失代偿和腹水等。最为严重的是食管和胃连接处的静脉扩张，一旦破裂就会引起严重的急性上消化道出血危及生命。</p>
+    </div>
   </div>
 </div>
-	<!-- Section 4: Interactive Image Links -->
-<div id="section-4" >
-  <!-- Add clickable images here -->
-  <a href="http://example.com/link1" target="_blank">
-    <img src="image/13.png" alt="Interactive Image 1"   style="margin-right: 10px; ">
-	<p class="custom-size3">数据上传</p>
-	
-  </a>
-  <a href="http://example.com/link2" target="_blank">
-    <img src="image/14.png" alt="Interactive Image 2"  >
-	<p class="custom-size3">数据检索</p>
-  </a>
-	<a href="http://example.com/link3" target="_blank">
-    <img src="image/15.png" alt="Interactive Image 2"  style="width: 40; height:20 ;">
-	<p class="custom-size3">操作指引</p>
-  </a>
+
+<div id="data">
+  <div class="content1">
+    <div class="left-content1">
+      <p>门静脉高压</p>
+      <p style="font-size: 6rem;">全球统计图</p>
+    </div>
+    <div class="right-content1">
+      <p class="custom-size10">门静脉高压症是一组由门静脉压力持久增高引起的症候群。大多数由肝硬化引起，少数继发于门静脉主干或肝静脉梗阻以及原因不明的其他因素。当门静脉血不能顺利通过肝脏回流入下腔静脉就会引起门静脉压力增高。表现为门-体静脉间交通支开放，大量门静脉血在未进入肝脏前就直接经交通支进入体循环，从而出现腹壁和食管静脉扩张、脾脏肿大和脾功能亢进、肝功能失代偿和腹水等。最为严重的是食管和胃连接处的静脉扩张，一旦破裂就会引起严重的急性上消化道出血危及生命。</p>
+    </div>
+  </div>
+  <div class="content2">
+    <div style="width: 1200px;padding-left: 50px;margin-top: 50px;background-color: #02925D;">
+      <div style="float: left;width: 32%">
+        <div style="width: 100%;border: 2px solid black;line-height: 35px;text-align: center;color: white;font-size: 20px;">不同年龄的病例分布</div>
+        <div style="width:300;height: 300px">
+          <!-- <div id="chart1" class="echart" style="cursor: pointer;width:100%;height:306px;"></div> -->
+          <img src="image/16.png" alt="Column 2 Image" style="width: 367px; height: 280px; cursor: pointer;">
+        </div>
+      </div>
+      <div style="float: left;width: 33%;padding-left: 10px;">
+        <div style="width: 100%;border: 2px solid black;line-height: 35px;text-align: center;color: white;font-size: 20px;">不同性别的病例分布</div>
+        <div style="width:300;height: 300px">
+          <!-- <div id="chart2"  style="width:100%;height:300px;cursor: pointer;margin: 0 auto;"></div> -->
+          <img src="image/17.png" alt="Column 2 Image" style="width: 369px; height: 280px; cursor: pointer;">
+        </div>
+      </div>
+      <div style="float: left;width: 33%;padding-left: 10px;">
+        <div style="width: 100%;border: 2px solid black;line-height: 35px;text-align: center;color: white;font-size: 20px;">肝硬化病例数省份排序</div>
+        <div style="width:300;height: 300px"> 
+          <!-- <div id="chart3" style="width:100%;height:330px;cursor: pointer;"></div> -->
+          <img src="image/18.png" alt="Column 2 Image" style="width: 369px; height: 280px; cursor: pointer;">
+        </div>
+      </div>
+      <div style="float: left;width: 42%;padding-left: 10px;">
+        <div style="width: 100%;border: 2px solid black;line-height: 35px;text-align: center;color: white;font-size: 20px;">国内各地医院病例数统计</div>
+        <div style="width:300;height: 500px"> 
+          <!-- <div id="chart4"  style="width:100%;height:486px;cursor: pointer;"></div> -->
+          <img src="image/19.png" alt="Column 2 Image" style="width: 500px; height: 486px; cursor: pointer;">
+        </div>
+      </div>
+      <div style="float: left;width: 56%;padding-left: 10px;">
+        <div style="width: 100%;border: 2px solid black;line-height: 35px;text-align: center;color: white;font-size: 20px;">中国病例分布</div>
+        <div style="width:450;height: 500px"> 
+          <!-- <div id="chart5"  style="width:100%;height:486px;cursor: pointer;"></div> -->
+          <img src="image/20.png" alt="Column 2 Image" style="width: 636px; height: 486px; cursor: pointer;">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Section 5: Three Column Layout -->
-<div id="section-5" >
-  <!-- Column 1 -->
-  <div class="column" >
-    <h2 class="custom-size9">关于 CHESS</h2>
-    <p class="custom-size5">国门静脉高压联盟(CHESS) 致力于打造国际一流门静脉高压与肝硬化临床研究及转化科学平台。联盟核心工作为开展前治技术研究及应用转化，牵头发起了近30项国内外多中心临床研究。CHESS牵头制定了《中国肝静脉压力梯度临床应用专家共识》、《新型冠状病毒肺炎后疫情时代巾静脉高压症全病程管理专家共识》，组织发起的系列研究及转化实践已获得我国500余家高水平医院的参与支持，有效推动了与全球20余个国家及地区学术组织的高质量合作发展。</p>
-	
+
+<div id="contact">
+  <div class="contact-content1" style="background-color: #02925D;">
+   <div class="contact-left">
+    <div class="left-top">
+      CHESS是什么
+    </div>
+    <div class="left-bottom">
+      <p class="custom-size11">中国门静脉高压联盟（CHESS）致力于打造国际一流门静脉高压与肝硬化临床研究及转化科学平台。联盟核心工作为开展前沿技术研究及应用转化，牵头发起了近30项国内外多中心临床研究。</p>
+      <p class="custom-size11">CHESS牵头制定了《中国肝静脉压力梯度临床应用专家共识》、《新型冠状病毒肺炎后疫情时代门静脉高压症全病程管理专家共识》，组织发起的系列研究及转化实践已获得我国500余家高水平医院的参与支持，有效推动了与全球20余个国家及地区学术组织的高质量合作发展。</p>
+    </div>
+    <div class="contact-bottom">
+      <video src="image/chesssp.mp4" id="myVideo" autoplay muted style="height: 400px;" onclick="autoplayvideo();"></video>
+  
+    </div>
+   </div>
+    <div class="contact-right">
+      <img src="image/21.png" alt="Column 2 Image" style="width: 100%; height: 100%; ">
+    </div>
+    
   </div>
-  <!-- Column 2 -->
-  <div class="column">
-    <h2 class="custom-size9">PH&C期刊</h2>
-    <img src="image/9.png" alt="Column 2 Image" style="max-width: 50%; height: auto; float: left;margin-right: 10px;">
-    <p class="custom-size7" >CHESS官方期刊Portal Hypertension & Cirrhosis (《门静脉高压与肝硬化(英文)》)是全球首本聚焦力静脉高压与肝硬化的国际期刊，由国家传染病医学中心学术支持，中华医学会杂志社出版,Wiley全球发行。期刊由CHESS创始人祁小龙担任创刊主编，中国科学院院士滕皋军担任名誉主编，国际编委来自美国哈佛大学、斯坦福大学、耶鲁大学及英国牛津大学等世界一流高等学府。期刊致力于搭建世界-流的巾静脉高压与肝硬化学术共享平台，发表高质量的科研论文及权威共识指南，向该领域医务工作者、科研人员提供新进展和新成果。</p>
-  </div>
-  <!-- Column 3 -->
-  <div class="column" >
-    <h2 class="custom-size9">内静脉高压</h2>
-    <p class="custom-size5">静脉高压症是一组由门静脉压力持久增高引起的症候群。大多数由肝硬化引起，少数继发于门静脉主干或肝静脉梗阻以及原因不明的其他因素。当门静脉血不能顺利通过肝脏回流入下腔静脉就会引起巾静脉压力增高。表现为门-体静脉间交通支开放，大量门静脉血在未进入肝脏前就直接经交通支进入体循环，从而出现腹壁和食管静脉扩张、脾脏肿大和脾功能亢进、肝功能失代偿和腹水等。最为严重的是食管和胃连接处的静脉扩张，一旦破裂就会引起严重的急性上消化道出血危及生命。</p>
-  </div>
+
+
 </div>
+
 <div id="footer" >
   <div class="left1">
     <img src="image/1.png" alt="QR Code" >
@@ -112,15 +219,24 @@
     <a href="#about">使用帮助</a>
   </div>
   <div class="right1">
+    
     <p class="custom-size6">联系我们</p>
-    <p class="custom-size8">电话: 000-000-000</p>
-    <p class="custom-size8">邮箱: info@email.com</p>
+    <div style="width: 300px;height: 40px;margin-top: 40px;">
+      <img src="image/10.png" alt="Column 2 Image" style="max-width: 7%; height: auto; margin-left: 60px;float: left;margin-top: 3px;">
+      <p class="custom-size8">025-83272121</p>
+    </div>
+    <div style="width: 300px;height: 40px;">
+      <img src="image/11.png" alt="Column 2 Image" style="max-width: 7%; height: auto; margin-left: 20px;float: left;margin-top: 3px;">
+      <p class="custom-size8">qixiaolong@vip.163.com</p>
+    </div>
   </div>
   <div class="right2">
     <p class="custom-size6">地址</p>
-    <p class="custom-size8">南京智慧医疗研究院</p>
+    <img src="image/12.png" alt="Column 2 Image" style="max-width: 10%; height: auto; float: left;margin-top: 20px;margin-left: 5px;">
+    <p class="custom-size8">江苏省南京市浦口区南京脑科学与类脑智能创新中心A座12F CHESS临床研究中心</p>
   </div>
 </div>
+
 </body>
 </html>
 
