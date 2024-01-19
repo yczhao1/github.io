@@ -166,7 +166,8 @@
 		font-size: 2rem;
 		color: white;
 		text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 600px;
 	}
 
@@ -177,11 +178,12 @@
 
   .right-content{
     width:600px;
-    background-image: url('image/4.png');
+    background-image: url('image/23.png');
     background-size: cover; 
-    max-width: 50%; 
-    height: 489.73px;
-    opacity: 0.8; 
+
+    width: 600px; 
+    height: 488.15px;
+    
     color:white; 
     text-align: center; 
     padding: 20px;
